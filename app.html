@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workout Generator App</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg, #e8f6ff, #eafff1);
+            text-align: center;
+            padding: 40px;
+        }
+
+        .card {
+            background: white;
+            width: 60%;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2b6cb0;
+        }
+
+        select, button {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #5aa9e6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3d8ed6;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #1f2d3d;
+        }
+
+        ul {
+            text-align: left;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>Workout Generator</h1>
+
+    <p>Select your workout split:</p>
+
+    <select id="type">
+        <option value="push">Push Day</option>
+        <option value="pull">Pull Day</option>
+        <option value="legs">Leg Day</option>
+    </select>
+
+    <p>Select difficulty:</p>
+
+    <select id="difficulty">
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+    </select>
+
+    <br>
+
+    <button onclick="generateWorkout()">Generate Workout</button>
+
+    <div id="output"></div>
+
+</div>
+
+<script>
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function generateWorkout() {
+
+    let type = document.getElementById("type").value;
+    let difficulty = document.getElementById("difficulty").value;
+
+    let push = [
+        "Bench Press",
+        "Shoulder Press",
+        "Triceps Pushdowns",
+        "Dips",
+        "Incline Dumbbell Press",
+        "Lateral Raises"
+    ];
+
+    let pull = [
+        "Lat Pulldown",
+        "Barbell Rows",
+        "Bicep Curls",
+        "Hammer Curls",
+        "Face Pulls",
+        "Deadlifts"
+    ];
+
+    let legs = [
+        "Squats",
+        "Hamstring Curls",
+        "Calf Raises",
+        "Leg Extensions",
+        "Walking Lunges",
+        "Leg Press"
+    ];
+
+    let workout = [];
+
+    if (type === "push") workout = push;
+    if (type === "pull") workout = pull;
+    if (type === "legs") workout = legs;
+
+    // Shuffle for randomness
+    workout = shuffle(workout);
+
+    let sets = "";
+    let count = 0;
+
+    // Difficulty adjustment
+    if (difficulty === "beginner") count = 3;
+    if (difficulty === "intermediate") count = 4;
+    if (difficulty === "advanced") count = 5;
+
+    let output = "<ul>";
+
+    for (let i = 0; i < count; i++) {
+        output += "<li>" + workout[i] + " - ";
+
+        if (difficulty === "beginner") output += "3x10";
+        if (difficulty === "intermediate") output += "4x10";
+        if (difficulty === "advanced") output += "5x8";
+
+        output += "</li>";
+    }
+
+    output += "</ul>";
+
+    document.getElementById("output").innerHTML = output;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+/* PAGE BACKGROUND */
+body {
+    background: linear-gradient(135deg, #e8f6ff, #eafff1);
+    font-family: Arial, sans-serif;
+    color: #1f2d3d;
+    margin: 0;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(135deg, #5aa9e6, #4fd1c5);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* NAV BAR */
+.nav {
+    text-align: center;
+    padding: 15px;
+    background-color: #dff7ff;
+    border-bottom: 2px solid #b8e6ff;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #2b6cb0;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+/* MAIN SECTIONS (CARD STYLE) */
+.content,
+.media,
+.video {
+    background-color: white;
+    width: 80%;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* HEADINGS */
+h2 {
+    color: #2b6cb0;
+}
+
+/* LIST STYLING */
+ul, ol {
+    line-height: 1.6;
+}
+
+/* IMAGE */
+img {
+    border-radius: 12px;
+    max-width: 100%;
+}
+
+/* FOOTER */
+.footer {
+    background: linear-gradient(135deg, #5aa9e6, #4fd1c5);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.app-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #5aa9e6, #4fd1c5);
+    color: white;
+    padding: 14px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.2s ease-in-out;
+}
+
+.app-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.app-button:active {
+    transform: scale(0.98);
+
+    
+}
+.center {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tableau {
+    background-color: white;
+    width: 80%;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.tableau iframe {
+    max-width: 100%;
+    border: none;
+}
